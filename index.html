@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- faz o site ocupar todo o espaço disponível na janela, seja em celulares, tablets ou PC’s. É a tag mais importante -->
+        <title>Todo List Avançado</title>
+        <!-- css do projeto -->
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Font Awesome icones ?? -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- js do projeto -->
+        <script src="js/scripts.js" defer></script> 
+        <!-- defer pq vamos usar dom para manipular eventos na tela, com atributo defer os arquivos carregam após o html, o que antes era resolvido colocando o arquivo de js depois do body  -->
+    </head>
+    <body>
+        <div class="todo-container">
+            <header>
+                <h1>To-do List</h1> 
+            </header>
+            <form id="todo-form"> <!-- formulario, nao precisa de action pq nao tem back end -->
+                <p>Adicione a sua tarefa:</p>
+                <div class="form-control"> 
+                    <input type="text" id="todo-input" placeholder="O que você vai fazer?"> <!---id serve para poder selecionar no js, assim nos situaremos de que elemento estamos adicionando um evento por exemplo-->
+                    <button type="submit">
+                        <i class="fa-thin fa-plus"></i>
+                    </button>
+                </div>
+            </form>
+            <form id="edit-form" class="hide">
+                <p>Edite a sua tarefa:</p>
+                <div class="form-control">
+                    <input type="text" id="edit-input"> <!--- nao precisa placeholder pois ja vem com texto preenchido-->
+                    <button type="submit">
+                        <i class="fa-solid fa-check-double"></i>
+                    </button>                
+                </div>
+                <button id="cancel-edit-btn">Cancelar</button>
+            </form>
+            <div id="toolbar"> <!--barra de tarefas-->
+                <div id="search">
+                    <h4>Pesquisar:</h4>
+                    <form>
+                        <input type="text" id="search-input" placeholder="Buscar">
+                        <button id="erase-button">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </form>
+                </div>
+                <div id="filter">
+                    <h4>Filtrar:</h4>
+                    <select id="filter-select">
+                        <option value="all">Todos</option>
+                        <option value="done">Feitos</option>
+                        <option value="todo">A fazer</option>
+                    </select>             
+                </div>
+            </div>
+            <div id="todo-list">
+                <div class="todo done">
+                    <h3>Estou fazendo alguma coisa</h3>
+                    <button class="finish-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="edit-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="remove-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="todo">
+                    <h3>Estudar js</h3>
+                    <button class="finish-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="edit-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="remove-todo"> <!-- class em vez de id porque vamos trabalhar com varios elementos q possuem varios botoes iguais q fazem a mesma coisa só que pra to-dos diferentes, id é unico  -->
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+    
